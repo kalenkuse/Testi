@@ -1,5 +1,9 @@
 #include "include/list.h"
 
+/**
+ * Muokkaillaan muokkaillaan testicommitin vuoksi
+ */
+
 int main(int argCount, char* args[])
 {
     if (argCount > 1)
