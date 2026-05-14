@@ -23,7 +23,7 @@ void List::printMenu()
 
     if (choice == 4)
     {
-        exit(0);
+        return;
     }
     else if (choice == 2)
     {

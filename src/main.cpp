@@ -1,21 +1,22 @@
 #include "include/list.h"
-
-/**
- * Muokkaillaan muokkaillaan testicommitin vuoksi
- * Muokkaillaan vähän lisää 
- */
+#include "include/database.h"
 
 int main(int argCount, char* args[])
 {
+    List simpleList;
+    Database data;
+        
     if (argCount > 1)
     {
-        List simpleList;
         simpleList.NAME = string(args[1]);
         simpleList.printMenu();
+        data.write(simpleList.list);
+        data.read();
     }
     else
     {
-        cout << "Username not supplied! Exiting..." << endl;
+        cout << "Username not supplied!" << endl;
     }
+
     return 0;
 }
