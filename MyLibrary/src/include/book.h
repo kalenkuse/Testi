@@ -9,6 +9,12 @@ enum class ReadingStatus {wantToRead,
                           finishedReading,
                           stoppedReading};
 
+unsigned int MIN_YEAR = 1000;
+unsigned int MAX_YEAR = 9999;
+
+unsigned int ISBN_LENGTH_OLD = 10;
+unsigned int ISBN_LENGTH = 13;
+
 class Book
 {
     public:
@@ -18,21 +24,23 @@ class Book
           const string& title,
           unsigned int pageCount,
           unsigned int year,
-          const string& fsbn);
+          const string& isbn);
 
     // Destructor
     virtual ~Book ();
 
     // Getters
-    string getAuhtor ();
+    string getAuthor ();
     string getTitle ();
     unsigned int getPageCount ();
     unsigned int getYear ();
-    string getFsbn ();
+    string getIsbn ();
 
     // Setters
     bool setYear (unsigned int year);
-    bool setFsbn (string fsbn);
+    bool setIsbn (string isbn);
+
+    void changeStatus (ReadingStatus status);
 
     private:
 
@@ -41,7 +49,7 @@ class Book
     string title_;
     unsigned int pageCount_;
     unsigned int year_ = 0;
-    string fsbn_ = "";
+    string isbn_;
 
     // States
     ReadingStatus status_;
